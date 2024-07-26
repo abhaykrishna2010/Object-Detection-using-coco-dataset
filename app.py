@@ -6,7 +6,7 @@ from tracker import *
 
 app = Flask(__name__)
 
-model=YOLO(r'C://Users/abhay/Documents/VIT/PJT_Project/projectmain/yolov8s.pt')  #path to model
+model=YOLO(r'yolov8s.pt')  #path to model
 
 @app.route('/')
 def index():
@@ -14,7 +14,7 @@ def index():
 
 def generate_frames():
     cap=cv2.VideoCapture(0)
-    my_file=open(r"C://Users/abhay/Documents/VIT/PJT_Project/projectmain/coco.txt") #path to coco file
+    my_file=open(r"coco.txt") #path to coco file
     data=my_file.read()
     class_list=data.split("\n")
 
